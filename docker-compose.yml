@@ -1,8 +1,6 @@
-volumes:
-  postgres-data:
-    driver: local
-  kestra-data:
-    driver: local
+networks:
+  caddynet:
+    external: true
 
 services:
   postgres:
@@ -30,7 +28,7 @@ services:
     user: "root"
     command: server standalone
     volumes:
-      - kestra-data:/app/storage
+      - /opt/vps3/vps3-data/kestra/kestra-data:/app/storage
       - /var/run/docker.sock:/var/run/docker.sock
       - /tmp/kestra-wd:/tmp/kestra-wd
     environment:
