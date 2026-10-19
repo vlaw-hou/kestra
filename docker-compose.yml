@@ -33,11 +33,11 @@ services:
       - caddynet
 
     ports:
-      - "8080:8080"
+      - "8480:8080"
       # The following is the management port, not exposed by default.
       # Note that exposing the management port is intended for development purpose as this port is un-authenticated by default
       # and expose sensitive information and actions.
-      - "8081:8081"
+      - "8481:8081"
       
     environment:
       DB = postgresql://$username:$password@postgres_db:5432/kestra
