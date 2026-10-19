@@ -20,7 +20,7 @@ services:
       retries: 10
 
   kestra:
-    image: kestra/kestra:latest
+    image: kestra/kestra:latest   docker pull kestra/kestra:v2.0
     pull_policy: always
     restart: unless-stopped
     # Kestra, by default, has a termination grace period of 5m. We need to wait a little more to be sure no active tasks are running.
@@ -34,6 +34,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - /tmp/kestra-wd:/tmp/kestra-wd
     environment:
+      DB = postgresql://$username:$password@postgres_db:5432/kestra
       KESTRA_CONFIGURATION: |
         datasources:
           postgres:
