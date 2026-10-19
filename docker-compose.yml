@@ -63,6 +63,6 @@ services:
       # Note that exposing the management port is intended for development purpose as this port is un-authenticated by default
       # and expose sensitive information and actions.
       # - "8081:8081"
-    depends_on:
-      postgres:
-        condition: service_healthy
+    # depends_on:
+    #  postgres:
+    #    condition: service_healthy
