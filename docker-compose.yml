@@ -41,6 +41,7 @@ services:
       
     environment:
       DB = postgresql://$username:$password@postgres_db:5432/kestra
+      KESTRA_DB_CONNECTION_STRING: postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres_db:5432/kestra
       
       # KESTRA_CONFIGURATION: |
       #  datasources:
